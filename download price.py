@@ -1,5 +1,4 @@
-import selenium, requests, time
-import openpyxl
+import selenium, time
 import csv
 from time import sleep
 from selenium import webdriver
