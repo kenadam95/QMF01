@@ -1,5 +1,4 @@
 import selenium, time
-import csv
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
