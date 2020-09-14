@@ -44,7 +44,7 @@ print("Here we go!\n")
 print("Downloading...")
 
 #download
-portfolio = ['CEO','CLG','D11','D2D','DIG','DLG','DLR','DRH','DTA','DXG','FLC','HAG','HDC','HDG','HQC','IDI','IDJ','IDV','IJC','ITA','ITC','KAC','KBC','KDH','LCG','LEC','LGL','LHG','NBB','NDN','NHA','NLG','NTB','NTL','NVL','NVT','OGC','PDR','PFL','PPI','PVL','QCG','RCD','RCL','REE','SC5','SCR','SDI','SDU','SGR','SHN','SJS','SZL','TDC','TDH','TIG','TKC','UDC','UIC','VCR','VHM','VIC','VNI','VPH','VRE']
+portfolio = ['AGG','ASM','CCL','CIG','CLG','CRE','D2D','DRH','DTA','DXG','FDC','FIR','FLC','HAR','HDC','HPX','HQC','HTN','ITC','KBC','KDH','KOS','LDG','LEC','LHG','NBB','NLG','NTL','NVL','NVT','PDR','PTL','QCG','SCR','SGR','SJS','SZL','TDC','TDH','TEG','TIX','TN1','VHM','VIC','VPH','VPI','VRE']
 numlist = len(portfolio)
 for i in range(numlist):
 	print("Downloading",portfolio[i],'\n')
