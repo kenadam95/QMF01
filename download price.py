@@ -2,9 +2,13 @@ import selenium, time
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
+import csv 
+
+
 
 #open cophieu68
-index = webdriver.Chrome()
+index = webdriver.Chrome(ChromeDriverManager().install())
 index.get('https://www.cophieu68.vn/')
 
 #wait for loading
@@ -44,9 +48,16 @@ print("Here we go!\n")
 print("Downloading...")
 
 #download
-portfolio = ['AGG','ASM','CCL','CIG','CLG','CRE','D2D','DRH','DTA','DXG','FDC','FIR','FLC','HAR','HDC','HPX','HQC','HTN','ITC','KBC','KDH','KOS','LDG','LEC','LHG','NBB','NLG','NTL','NVL','NVT','PDR','PTL','QCG','SCR','SGR','SJS','SZL','TDC','TDH','TEG','TIX','TN1','VHM','VIC','VPH','VPI','VRE']
+portfolio = []
+
+with open('HOSE.csv') as csvfile:    
+	csvReader = csv.reader(csvfile)    
+	for row in csvReader:        
+		portfolio.append(row[0])
+
+portfolio[0]="AAA"
 numlist = len(portfolio)
 for i in range(numlist):
 	print("Downloading",portfolio[i],'\n')
-	index.get('https://www.cophieu68.vn/export/excelfull.php?id='+portfolio[i])
+	index.get('https://www.cophieu68.vn/export/reportfinance.php?id='+portfolio[i])
 	sleep(3)
