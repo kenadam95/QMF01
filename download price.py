@@ -1,24 +1,26 @@
+import sys 
 import selenium, time
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
 
-#open cophieu68
-index = webdriver.Chrome()
-index.get('https://www.cophieu68.vn/')
 
-#wait for loading
-for i in reversed(range(10)):
-	print(i+1,end = " "),
-	sleep(1)
-print ("Go!!\n")
+path = "D:\\Coding\\QMF01\\FR-Vietnam"
 
-#open login page and wait 10s
+with open(path, 'wb') as f:
+    f.write(r.content)
+#install Chrome Driver
+index = webdriver.Chrome(ChromeDriverManager().install())
+
+index.get('https://www.cophieu68.vn/export/excelfull.php?id=^vnindex')
+#open login page and wait 5s
 login = index.find_element_by_link_text("Đăng nhập")
 login.click()
-for i in reversed(range(10)):
-	print(i+1,end = " "),
+for i in reversed(range(2)):
+	print("|",end = " "),
 	sleep(1)
+
 
 #typing and submit account and wait 10s
 print ("Typing...\n")
@@ -27,26 +29,16 @@ username.send_keys('buihuunam95@gmail.com')
 password = index.find_element_by_css_selector('#div_form_login > div > form > table > tbody > tr:nth-child(5) > td > input')
 password.send_keys('kyxqwr')
 password.submit()
-for i in reversed(range(10)):
-	print(i+1,end = " "),
-	sleep(1)
-#Open data index and wait 10s
-print ("Open data page..\n")
 
-gate = "#navlist > li:nth-child(7) > a"
-download = index.find_element_by_css_selector(gate)
-download.click()
-
-for i in reversed(range(10)):
-	print(i+1,end = " "),
+for i in reversed(range(2)):
+	print("|",end = " "),
 	sleep(1)
 print("Here we go!\n")
-print("Downloading...")
 
 #download
-portfolio = ['AGG','ASM','CCL','CIG','CLG','CRE','D2D','DRH','DTA','DXG','FDC','FIR','FLC','HAR','HDC','HPX','HQC','HTN','ITC','KBC','KDH','KOS','LDG','LEC','LHG','NBB','NLG','NTL','NVL','NVT','PDR','PTL','QCG','SCR','SGR','SJS','SZL','TDC','TDH','TEG','TIX','TN1','VHM','VIC','VPH','VPI','VRE']
+portfolio = ["HPG","NKG","HSG"]
 numlist = len(portfolio)
 for i in range(numlist):
 	print("Downloading",portfolio[i],'\n')
-	index.get('https://www.cophieu68.vn/export/excelfull.php?id='+portfolio[i])
-	sleep(3)
+	index.get('https://www.cophieu68.vn/export/reportfinance.php?id='+portfolio[i])
+
